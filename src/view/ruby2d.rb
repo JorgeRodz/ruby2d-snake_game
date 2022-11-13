@@ -1,14 +1,16 @@
 # rubocop:disable all
 require 'ruby2d' # In order to use ruby2d
+require_relative "../model/state"
 
 module View
   # Main class window view
   class Ruby2dView
     # Construct function/method
-    def initialize
+    def initialize(app)
       @pixel_size = 50
       @food
       @snake_positions
+      @app = app
     end
 
     # Method to display the window
@@ -19,11 +21,16 @@ module View
         width: @pixel_size * state.grid.cols,
         height: @pixel_size * state.grid.rows
       )
+      on :key_down do |event|
+        handle_key_event(event)
+      end
       show # ruby2d method to display the window
     end
 
     # Method to render the game state(snake, food)
     def render(state)
+      extend Ruby2D::DSL # Necessary to manage the native window system
+      close if state.game_finished
       render_food(state)  # To display the food
       render_snake(state)  # To display the snake
     end
@@ -58,6 +65,23 @@ module View
           size: @pixel_size,
           color: 'green',
         )
+      end
+    end
+
+    def  handle_key_event(event)
+      case event.key
+        when 'up'
+          # cambiar direccion hacia arriba
+          @app.send_action(:change_direction, Model::Direction::UP)
+        when 'down'
+          # cambiar direccion hacia abajo
+          @app.send_action(:change_direction, Model::Direction::DOWN)
+        when 'left'
+          # cambiar direccion hacia izquierda
+          @app.send_action(:change_direction, Model::Direction::LEFT)
+        when 'right'
+          # cambiar direccion hacia derecha
+          @app.send_action(:change_direction, Model::Direction::RIGHT)
       end
     end
   end
