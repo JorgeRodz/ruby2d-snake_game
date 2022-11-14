@@ -29,3 +29,4 @@
 - OOP in Ruby
 - Flux architecture
 - Ruby2d library methods and related syntax
+- How to create and run tests with minitest gem
