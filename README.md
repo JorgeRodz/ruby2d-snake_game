@@ -3,6 +3,13 @@
 [![Generic badge](https://img.shields.io/badge/Ruby&nbsp;Version->= v2.7.0-blue?&style=plastic)](https://www.ruby-lang.org/en/downloads/releases/)&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/💎-ruby2d-important?&style=plastic)](https://www.ruby2d.com/)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/💎-minitest-important?&style=plastic)](https://github.com/minitest/minitest)
 
 ## 📷 Screenshots 🎥
+![ruby2d_snake-game gif](https://user-images.githubusercontent.com/13999498/201653644-83172bfd-e91b-4995-8ad6-c55449a3d54a.gif)
+
+## ▶️ Play it locally 🖥️
+- Install the ruby2d gem : ```gem install ruby2d```
+- Clone the repo
+- Run ```ruby src/app.rb``` .... and you are ready to play it! 🎮️
+
 
 ## 📝 Description 📖
 
